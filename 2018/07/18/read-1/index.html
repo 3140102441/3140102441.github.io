@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Matrix Approximation,Collaborative Filtering,Local," />
 
 
 
@@ -80,13 +80,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="TT的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="Mixture-Rank Matrix Approximation for Collaborative Filtering Embedding Global Information in Local Matrix Approximation Models for Collaborative Filtering     Low-Rank Matrix Approximation with Stabi">
+<meta name="keywords" content="Matrix Approximation,Collaborative Filtering,Local">
+<meta property="og:type" content="article">
+<meta property="og:title" content="推荐系统领域论文阅读简记">
+<meta property="og:url" content="http://yoursite.com/2018/07/18/read-1/index.html">
 <meta property="og:site_name" content="TT的博客">
+<meta property="og:description" content="Mixture-Rank Matrix Approximation for Collaborative Filtering Embedding Global Information in Local Matrix Approximation Models for Collaborative Filtering     Low-Rank Matrix Approximation with Stabi">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg">
+<meta property="og:updated_time" content="2018-11-04T02:45:31.503Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TT的博客">
+<meta name="twitter:title" content="推荐系统领域论文阅读简记">
+<meta name="twitter:description" content="Mixture-Rank Matrix Approximation for Collaborative Filtering Embedding Global Information in Local Matrix Approximation Models for Collaborative Filtering     Low-Rank Matrix Approximation with Stabi">
+<meta name="twitter:image" content="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg">
 
 
 
@@ -116,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/18/read-1/"/>
 
 
 
 
 
-  <title>TT的博客</title>
+  <title>推荐系统领域论文阅读简记 | TT的博客</title>
   
 
 
@@ -141,8 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -235,9 +241,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -267,9 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/18/read-1/" itemprop="url">推荐系统领域论文阅读简记</a></h1>
+          <h1 class="post-title" itemprop="name headline">推荐系统领域论文阅读简记</h1>
         
 
         <div class="post-meta">
@@ -389,19 +393,65 @@
       
 
       
-        
-          <p>Mixture-Rank Matrix Approximation for Collaborative Filtering</p>
+        <p>Mixture-Rank Matrix Approximation for Collaborative Filtering</p>
 <p>Embedding Global Information in Local Matrix Approximation Models for Collaborative Filtering    </p>
 <p>Low-Rank Matrix Approximation with Stability    </p>
-<p>论文阅读简记<br></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/18/read-1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<p>论文阅读简记<br><a id="more"></a></p>
+<h2 id="Mixture-Rank-Matrix-Approximation-for-Collaborative-Filtering"><a href="#Mixture-Rank-Matrix-Approximation-for-Collaborative-Filtering" class="headerlink" title="Mixture-Rank Matrix Approximation for Collaborative Filtering"></a>Mixture-Rank Matrix Approximation for Collaborative Filtering</h2><h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><ul>
+<li>In many real-world user-item rating matrices, submatrices with different ranks could coexist. Adopting a fixed rank for all users and items cannot perfectly model the internal structures of the rating matrix, which will lead to imperfect approximations as well as degraded recommendation accuracy.    </li>
+</ul>
+<h3 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h3><ul>
+<li>propose a mixture-rank matrix approximation (MRMA) method, in which user-item ratings are represented by a mixture of LRMA models with different ranks    </li>
+<li>a learning algorithm capitalizing on iterated condition modes is proposed to cope with the non-convex optimization problem associated with MRMA</li>
+</ul>
+<h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><ul>
+<li>Following the idea of PMF, we exploit a probabilistic model with Gaussian noise to model the ratings    </li>
+<li>Loss Function：<img src="/2018/07/18/read-1/论文阅读/1_1.jpg" alt="1"></li>
+<li>graphical   model：<img src="/2018/07/18/read-1/论文阅读/1_2.jpg" alt="2"></li>
+</ul>
+<h2 id="Embedding-Global-Information-in-Local-Matrix-Approximation-Models-for-Collaborative-Filtering"><a href="#Embedding-Global-Information-in-Local-Matrix-Approximation-Models-for-Collaborative-Filtering" class="headerlink" title="Embedding Global Information in Local Matrix Approximation Models for Collaborative Filtering"></a>Embedding Global Information in Local Matrix Approximation Models for Collaborative Filtering</h2><h3 id="Motivation-1"><a href="#Motivation-1" class="headerlink" title="Motivation"></a>Motivation</h3><ul>
+<li>MA models perform poorly at detecting strong associations among a small set of items. Therefore, it is desirable to consider local associations to enhance model accuracy.    </li>
+<li>the prediction quality of local models based on submatrices is generally low, because    <ul>
+<li>local models may easily overfit due to insufficient training data in clusters    </li>
+<li>the overall associations shared among all users/items are not captured         </li>
+</ul>
+</li>
+<li>ensemble learning leads to another problem: the overall computation overhead is usually very high      </li>
+</ul>
+<h3 id="Contribution-1"><a href="#Contribution-1" class="headerlink" title="Contribution"></a>Contribution</h3><ul>
+<li>propose GLOMA, a scalable and accurate MA-based method which can capture both localized relationships in submatrices and global structure among all users and items    </li>
+<li>instead of relying on ensemble techniques, GLOMA attempts to embed a global MA model, which contains the global information, into the learning process of local MA models    </li>
+<li>a new clustering method is proposed, in which every user or item is characterized by its rating distribution.    </li>
+</ul>
+<h3 id="Method-1"><a href="#Method-1" class="headerlink" title="Method"></a>Method</h3><ul>
+<li>use the previously-trained model to help local models capture the global information by planting U and V into the learning process of local models    </li>
+<li>Loss function：<img src="/2018/07/18/read-1/论文阅读/1_3.jpg" alt="3"></li>
+<li>The key characteristics of GLOMA are summarized as follows:    <ul>
+<li>The terms in Equation (5) are the same as the optimization objective of clustering-based CF method, which ensure that the learned U and V can accurately capture the strong associations in certain user-item subgroups.    </li>
+<li>The terms in Equation (6) and Equation (7) can help local models estimate the overall structure and avoid overfitting based on the embedded latent factors U~ and V~ , and parameters π1 and π2 can be employed to control the contribution of individual user/item-specific data extension.    </li>
+</ul>
+</li>
+</ul>
+<h2 id="Low-Rank-Matrix-Approximation-with-Stability"><a href="#Low-Rank-Matrix-Approximation-with-Stability" class="headerlink" title="Low-Rank Matrix Approximation with Stability"></a>Low-Rank Matrix Approximation with Stability</h2><h3 id="Motivation-2"><a href="#Motivation-2" class="headerlink" title="Motivation"></a>Motivation</h3><ul>
+<li>existing LRMA methods cannot provide stable matrix approximations，and thus have low generalization performance     </li>
+<li>cross validation methods have the drawback that the amount of data available for model learning is reduced    </li>
+<li>Ensemble LRMA methods are computationally expensive due to the training of sub-models    </li>
+</ul>
+<h3 id="Contribution-2"><a href="#Contribution-2" class="headerlink" title="Contribution"></a>Contribution</h3><ul>
+<li>this work first introduces the stability concept in LRMA, which can provide theoretical guidelines for deriving stable matrix approximation    </li>
+<li>a stable LRMA algorithm design framework is proposed, which can achieve high stability, i.e., high generalization performance by designing and solving new optimization objectives derived based on stability analysis    </li>
+</ul>
+<h3 id="Method-2"><a href="#Method-2" class="headerlink" title="Method"></a>Method</h3><ul>
+<li>Model Formulation ：<img src="/2018/07/18/read-1/论文阅读/1_4.jpg" alt="4"></li>
+<li>Hard Predictable Subsets Selection ：<ul>
+<li>approximate the targeted matrix R with existing LRMA solutions    </li>
+<li>for each entry (i，j)  it is chosen with large probability  and small probability otherwise</li>
+<li>obtain Ω by removing the chosen entries to satisfy the condition of Proposition 1, or probe Ω to find hard predictable subsets that satisfy the condition of Theorem 4    </li>
+</ul>
+</li>
+<li>The SMA Learning Algorithm   <img src="/2018/07/18/read-1/论文阅读/1_5.jpg" alt="5"></li>
+</ul>
+
       
     </div>
     
@@ -409,6 +459,12 @@
     
 
      <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
       
     </div>
 
@@ -420,14 +476,40 @@
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/Matrix-Approximation/" rel="tag"><i class="fa fa-tag"></i> Matrix Approximation</a>
+          
+            <a href="/tags/Collaborative-Filtering/" rel="tag"><i class="fa fa-tag"></i> Collaborative Filtering</a>
+          
+            <a href="/tags/Local/" rel="tag"><i class="fa fa-tag"></i> Local</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/18/论文阅读/" rel="next" title="推荐系统领域论文阅读简记">
+                <i class="fa fa-chevron-left"></i> 推荐系统领域论文阅读简记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -437,424 +519,27 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/18/论文阅读/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lu tao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/author.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TT的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/18/论文阅读/" itemprop="url">推荐系统领域论文阅读简记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-18T11:33:38+08:00">
-                2018-07-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/论文阅读/" itemprop="url" rel="index">
-                    <span itemprop="name">论文阅读</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/07/18/论文阅读/" class="leancloud_visitors" data-flag-title="推荐系统领域论文阅读简记">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  885
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox"
-                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cjo2a3aqi0002qcviek2lkf52"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" itemprop="contentUrl"/>
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
-
-      
-        
-          <p>Beyond Globally Optimal: Focused Learning for Improved Recommendations   </p>
-<p>Reinforcement Learning based Recommender System using Biclustering Technique    </p>
-<p>AdaError: An Adaptive Learning Rate Method for Matrix Approximation-based Collaborative Filtering </p>
-<p>论文阅读简记<br></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/18/论文阅读/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-     <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
 
 
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/27/DiscreteLCR/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lu tao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/author.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TT的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/27/DiscreteLCR/" itemprop="url">DiscreteLCR</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-27T17:05:35+08:00">
-                2018-06-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/个人项目/" itemprop="url" rel="index">
-                    <span itemprop="name">个人项目</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/06/27/DiscreteLCR/" class="leancloud_visitors" data-flag-title="DiscreteLCR">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  13
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox"
-                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" rel="gallery_cjo2a3ash0006qcvirklabudx"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" itemprop="contentUrl"/>
-              </a>
-            
-          
-            
-              <a class="post-gallery-img fancybox"
-                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cjo2a3ash0006qcvirklabudx"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" itemprop="contentUrl"/>
-              </a>
-            
-          
-
-          
           </div>
-        </div>
-      
+          
 
-      
-        
-          <p>DiscreteLCR<br>以上是摘要<br></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/27/DiscreteLCR/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-     <div>
-      
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzY3Mi8xNDIwMw=="></div>
     </div>
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
   
 
 
-          </div>
-          
-
-
-          
 
         </div>
         
@@ -875,8 +560,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -956,6 +650,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mixture-Rank-Matrix-Approximation-for-Collaborative-Filtering"><span class="nav-number">1.</span> <span class="nav-text">Mixture-Rank Matrix Approximation for Collaborative Filtering</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Contribution"><span class="nav-number">1.2.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Method"><span class="nav-number">1.3.</span> <span class="nav-text">Method</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Embedding-Global-Information-in-Local-Matrix-Approximation-Models-for-Collaborative-Filtering"><span class="nav-number">2.</span> <span class="nav-text">Embedding Global Information in Local Matrix Approximation Models for Collaborative Filtering</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Motivation-1"><span class="nav-number">2.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Contribution-1"><span class="nav-number">2.2.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Method-1"><span class="nav-number">2.3.</span> <span class="nav-text">Method</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Low-Rank-Matrix-Approximation-with-Stability"><span class="nav-number">3.</span> <span class="nav-text">Low-Rank Matrix Approximation with Stability</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Motivation-2"><span class="nav-number">3.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Contribution-2"><span class="nav-number">3.2.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Method-2"><span class="nav-number">3.3.</span> <span class="nav-text">Method</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1107,6 +817,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1135,6 +849,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
