@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="Local,Matrix Factorization,Social recommendation," />
+  <meta name="keywords" content="Matrix Factorization,Local," />
 
 
 
@@ -80,19 +80,19 @@
 
 
 
-<meta name="description" content="Probabilistic Matrix Factorization     Local Low-Rank Matrix Approximation with Preference Selection of Anchor Points         Collaborative Filtering with Social Local Models     论文阅读简记">
-<meta name="keywords" content="Local,Matrix Factorization,Social recommendation">
+<meta name="description" content="Probabilistic Matrix Factorization     Local Low-Rank Matrix Approximation with Preference Selection of Anchor Points         论文阅读简记">
+<meta name="keywords" content="Matrix Factorization,Local">
 <meta property="og:type" content="article">
 <meta property="og:title" content="推荐系统领域论文阅读简记">
 <meta property="og:url" content="http://yoursite.com/2018/07/18/read-2/index.html">
 <meta property="og:site_name" content="TT的博客">
-<meta property="og:description" content="Probabilistic Matrix Factorization     Local Low-Rank Matrix Approximation with Preference Selection of Anchor Points         Collaborative Filtering with Social Local Models     论文阅读简记">
+<meta property="og:description" content="Probabilistic Matrix Factorization     Local Low-Rank Matrix Approximation with Preference Selection of Anchor Points         论文阅读简记">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg">
-<meta property="og:updated_time" content="2018-11-04T03:14:23.177Z">
+<meta property="og:updated_time" content="2018-11-04T04:16:06.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="推荐系统领域论文阅读简记">
-<meta name="twitter:description" content="Probabilistic Matrix Factorization     Local Low-Rank Matrix Approximation with Preference Selection of Anchor Points         Collaborative Filtering with Social Local Models     论文阅读简记">
+<meta name="twitter:description" content="Probabilistic Matrix Factorization     Local Low-Rank Matrix Approximation with Preference Selection of Anchor Points         论文阅读简记">
 <meta name="twitter:image" content="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg">
 
 
@@ -352,7 +352,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  345
+                  176
                 </span>
               
 
@@ -380,7 +380,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cjo2cydbb0009l8via55dduas"
+                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cjo2dcz8n00009gvi91vrid14"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" itemprop="contentUrl"/>
               </a>
@@ -395,7 +395,6 @@
       
         <p>Probabilistic Matrix Factorization    </p>
 <p>Local Low-Rank Matrix Approximation with Preference Selection of Anchor Points        </p>
-<p>Collaborative Filtering with Social Local Models    </p>
 <p>论文阅读简记<br><a id="more"></a></p>
 <h2 id="Probabilistic-Matrix-Factorization"><a href="#Probabilistic-Matrix-Factorization" class="headerlink" title="Probabilistic Matrix Factorization"></a>Probabilistic Matrix Factorization</h2><h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><ul>
 <li>Many existing approaches to collaborative filtering can neither handle very large datasets nor easily deal with users who have very few ratings    </li>
@@ -404,9 +403,9 @@
 <li>present probabilistic algorithms that scale linearly with the number of observations and perform well on very sparse and imbalanced datasets, such as the Netflix dataset    </li>
 </ul>
 <h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><ul>
-<li>The log of the posterior distribution over the user and movie features is given by<img src="/2018/07/18/read-2/read_2/6.jpg" alt="6"></li>
-<li>Loss Function：<img src="/2018/07/18/read-2/read_2/7.jpg" alt="7"></li>
-<li>constrained PMF (right)<img src="/2018/07/18/read-2/read_2/8.jpg" alt="8"></li>
+<li>The log of the posterior distribution over the user and movie features is given by<img src="/2018/07/18/read-2/6.jpg" alt="6"></li>
+<li>Loss Function：<img src="/2018/07/18/read-2/7.jpg" alt="7"></li>
+<li>constrained PMF (right)<img src="/2018/07/18/read-2/8.jpg" alt="8"></li>
 </ul>
 <h2 id="Local-Low-Rank-Matrix-Approximation-with-Preference-Selection-of-Anchor-Points"><a href="#Local-Low-Rank-Matrix-Approximation-with-Preference-Selection-of-Anchor-Points" class="headerlink" title="Local Low-Rank Matrix Approximation with Preference Selection of Anchor Points"></a>Local Low-Rank Matrix Approximation with Preference Selection of Anchor Points</h2><h3 id="Motivation-1"><a href="#Motivation-1" class="headerlink" title="Motivation"></a>Motivation</h3><ul>
 <li>In LLORMA, a critical step is to randomly select anchor points for each local matrix. This anchor-point selection method may lead to a bad performance and low efficiency because the anchor-points may be in the sparse region or in the overlapping area.    </li>
@@ -415,27 +414,8 @@
 <li>propose a preferable anchor-point selecting method with Clustering for LLORMA . The method improves both the effectiveness and efficiency of local low-rank matrix factorization.       </li>
 </ul>
 <h3 id="Method-1"><a href="#Method-1" class="headerlink" title="Method"></a>Method</h3><ul>
-<li><img src="/2018/07/18/read-2/read_2/9.jpg" alt="9"></li>
-<li><img src="/2018/07/18/read-2/read_2/10.jpg" alt="10"></li>
-</ul>
-<h2 id="Collaborative-Filtering-with-Social-Local-Models"><a href="#Collaborative-Filtering-with-Social-Local-Models" class="headerlink" title="Collaborative Filtering with Social Local Models"></a>Collaborative Filtering with Social Local Models</h2><h3 id="Motivation-2"><a href="#Motivation-2" class="headerlink" title="Motivation"></a>Motivation</h3><ul>
-<li>existing LRMA methods cannot provide stable matrix approximations，and thus have low generalization performance     </li>
-<li>cross validation methods have the drawback that the amount of data available for model learning is reduced    </li>
-<li>Ensemble LRMA methods are computationally expensive due to the training of sub-models    </li>
-</ul>
-<h3 id="Contribution-2"><a href="#Contribution-2" class="headerlink" title="Contribution"></a>Contribution</h3><ul>
-<li>this work first introduces the stability concept in LRMA, which can provide theoretical guidelines for deriving stable matrix approximation    </li>
-<li>a stable LRMA algorithm design framework is proposed, which can achieve high stability, i.e., high generalization performance by designing and solving new optimization objectives derived based on stability analysis    </li>
-</ul>
-<h3 id="Method-2"><a href="#Method-2" class="headerlink" title="Method"></a>Method</h3><ul>
-<li>Model Formulation ：<img src="/2018/07/18/read-2/read_2/4.jpg" alt="4"></li>
-<li>Hard Predictable Subsets Selection ：<ul>
-<li>approximate the targeted matrix R with existing LRMA solutions    </li>
-<li>for each entry (i，j)  it is chosen with large probability  and small probability otherwise</li>
-<li>obtain Ω by removing the chosen entries to satisfy the condition of Proposition 1, or probe Ω to find hard predictable subsets that satisfy the condition of Theorem 4    </li>
-</ul>
-</li>
-<li>The SMA Learning Algorithm   <img src="/2018/07/18/read-2/read_2/5.jpg" alt="5"></li>
+<li><img src="/2018/07/18/read-2/9.jpg" alt="9"></li>
+<li><img src="/2018/07/18/read-2/10.jpg" alt="10"></li>
 </ul>
 
       
@@ -464,11 +444,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Local/" rel="tag"><i class="fa fa-tag"></i> Local</a>
-          
             <a href="/tags/Matrix-Factorization/" rel="tag"><i class="fa fa-tag"></i> Matrix Factorization</a>
           
-            <a href="/tags/Social-recommendation/" rel="tag"><i class="fa fa-tag"></i> Social recommendation</a>
+            <a href="/tags/Local/" rel="tag"><i class="fa fa-tag"></i> Local</a>
           
         </div>
       
@@ -481,7 +459,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/18/论文阅读/" rel="next" title="推荐系统领域论文阅读简记">
+              <a href="/2018/07/18/read-1/" rel="next" title="推荐系统领域论文阅读简记">
                 <i class="fa fa-chevron-left"></i> 推荐系统领域论文阅读简记
               </a>
             
@@ -490,10 +468,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/18/read-1/" rel="prev" title="推荐系统领域论文阅读简记">
-                推荐系统领域论文阅读简记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -650,7 +624,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Probabilistic-Matrix-Factorization"><span class="nav-number">1.</span> <span class="nav-text">Probabilistic Matrix Factorization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Contribution"><span class="nav-number">1.2.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Method"><span class="nav-number">1.3.</span> <span class="nav-text">Method</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Local-Low-Rank-Matrix-Approximation-with-Preference-Selection-of-Anchor-Points"><span class="nav-number">2.</span> <span class="nav-text">Local Low-Rank Matrix Approximation with Preference Selection of Anchor Points</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Motivation-1"><span class="nav-number">2.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Contribution-1"><span class="nav-number">2.2.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Method-1"><span class="nav-number">2.3.</span> <span class="nav-text">Method</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collaborative-Filtering-with-Social-Local-Models"><span class="nav-number">3.</span> <span class="nav-text">Collaborative Filtering with Social Local Models</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Motivation-2"><span class="nav-number">3.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Contribution-2"><span class="nav-number">3.2.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Method-2"><span class="nav-number">3.3.</span> <span class="nav-text">Method</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Probabilistic-Matrix-Factorization"><span class="nav-number">1.</span> <span class="nav-text">Probabilistic Matrix Factorization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Contribution"><span class="nav-number">1.2.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Method"><span class="nav-number">1.3.</span> <span class="nav-text">Method</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Local-Low-Rank-Matrix-Approximation-with-Preference-Selection-of-Anchor-Points"><span class="nav-number">2.</span> <span class="nav-text">Local Low-Rank Matrix Approximation with Preference Selection of Anchor Points</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Motivation-1"><span class="nav-number">2.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Contribution-1"><span class="nav-number">2.2.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Method-1"><span class="nav-number">2.3.</span> <span class="nav-text">Method</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -686,7 +660,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">2.8k</span>
+    <span title="Site words total count">2.5k</span>
   
    -->
    
